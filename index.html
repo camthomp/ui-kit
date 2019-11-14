@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+    <h1>CamThomp UI Kit</h1>
+    <img src="" id="cat">
+</body>
+<script>
+    async function getCat(token) {
+        const response = await fetch('https://pokeapi.co/api/v2/pokemon/ditto');
+        const myJson = await response.json();
+        console.log(myJson.sprites.front_shiny)
+        document.getElementById('cat').src = myJson.sprites.front_shiny
+        
+    }
+
+    getCat();
+</script>
+
+</html>
